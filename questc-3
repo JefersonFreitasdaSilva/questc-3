@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main(void){
+ char V;
+ int A=0,B=0,T=0,con=1;
+ puts("Candidatos validos: A e B\nFim da eleicao: F\n");
+ do {
+ printf("%d° voto? ",con);
+ scanf("%c%*c",&V);
+ switch (V){
+ case 'A':A+=1;break;
+ case 'B':B+=1;break;
+ case'F':printf("Votos para A...: %d\n",A);
+ printf("Votos para B...: %d\n",B);
+ printf("Votos invalidos: %d\n",T);
+ printf("Total de votos.: %d\n",con-1);break;
+ default:
+ T+=1;break;
+ }
+ con++;
+ }while (V!='F');
+}
